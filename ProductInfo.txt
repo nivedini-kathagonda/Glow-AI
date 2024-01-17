@@ -1,0 +1,62 @@
+# closePopUp()
+    
+# # <img src="https://onemg.gumlet.io/l_watermark_346,w_690,h_700/a_ignore,w_690,h_700,c_pad,q_auto,f_auto/bd1atmdinwqwharxgxqo.jpg" alt="Cetaphil Sun Kids Very High Protection Liposomal Lotion SPF 50+ All Skin Types" style="max-width:max-content;max-height:350px;display:block;margin:auto;width:100%;height:auto;pointer-events:none">
+# image_element = driver.find_element_by_css_selector('.col-xs-10.ProductImage__preview-container___2oTeX img')
+
+# image_link = image_element.get_attribute('src')
+
+# print(image_link)
+
+# # Title
+
+# # <h1 class="ProductTitle__product-title___3QMYH">Cetaphil Sun Kids Very High Protection Liposomal Lotion SPF 50+ All Skin Types</h1>
+
+# title = driver.find_element_by_class_name("ProductTitle__product-title___3QMYH")
+
+# print(title.text)
+
+# # Highlight
+
+# #<div class="ProductHighlights__highlights-text___dc-WQ"><ul><li>It is a kid-friendly formulation that protects against UV rays</li></ul><ul><li>Enriched with aloe vera, vitamin E and glycerin to nourish delicate kids' skin</li></ul><ul><li>Its photostable filters offers enhanced protection against UVA and UVB rays</li></ul></div>
+# highlight = driver.find_element_by_class_name("ProductHighlights__highlights-text___dc-WQ")
+
+# for i in highlight.find_elements_by_tag_name('li'):
+#     print(i.text)
+    
+    
+# # Ratings
+
+# # <div class="ProductTitle__ratings___4MWF_"><div class="RatingDisplay__ratings-container___3oUuo" style="background-color:#1AAB2A"><span>4.3</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 51 48"><path fill="#ffffff" stroke="none" d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"></path></svg></div><span class="RatingDisplay__ratings-header___ZNj5b">12 Ratings &amp; 3 Reviews</span></div>
+
+# number_ratings=driver.find_element_by_css_selector('.RatingDisplay__ratings-header___ZNj5b')
+# rating_element = driver.find_element_by_css_selector('.ProductTitle__ratings___4MWF_ .RatingDisplay__ratings-container___3oUuo span')
+# print(number_ratings.text)
+# print(rating_element.text)
+
+# # Price
+
+# #<span class="PriceBoxPlanOption__offer-price___3v9x8 PriceBoxPlanOption__offer-price-cp___2QPU_">₹<!-- -->1862</span>
+# price = driver.find_element_by_class_name("PriceBoxPlanOption__offer-price___3v9x8")
+# print(price.text)
+
+# # Qty
+
+# #<span class="PackSizeLabel__single-packsize___3KEr_">150 ml Lotion</span>
+# qty = driver.find_element_by_class_name("PackSizeLabel__single-packsize___3KEr_")
+# print(qty.text)
+
+# description_content_element = driver.find_element_by_css_selector('.ProductDescription__description-content___A_qCZ')
+# description = description_content_element.get_attribute("innerHTML")
+
+# description
+
+# clean_text = re.sub('<.*?>', '', description)
+
+# clean_text
+
+# # Similar Product
+
+# #<div class="sku-card-item style__slide-parent___3t2fC"><a href="/otc/vanalaya-aloevera-moisturizing-lotion-otc647978" class="style__slider-item___2YIPO" target="_blank" rel="noopener"><div class="style__image-container___MXkPJ"><div class=""><img alt="Vanalaya Aloevera Moisturizing Lotion" src="https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/dr95vf7lbijj9mhun6oa.jpg" title="Vanalaya Aloevera Moisturizing Lotion" class="style__image___Ny-Sa style__loaded___22epL"></div></div><div class="style__counter-container___1zPzK"></div><div class="style__name___3YOZc style__large-font___2dBUf">Vanalaya Aloevera Moisturizing Lotion</div><div class="style__pack-size___3nfIS">pump bottle of 300 ml Lotion</div><div class="style__not-rating___2v3wz"></div><div class="style__eta___1JNVM"></div><div class="style__price-container___3DXin"><div><div><span class="style__mrp-tag___3T8Mr">MRP</span><span class="style__strike-price___3Ag3J">₹449</span><span class="style__discount-percent___1CBqr">36% off</span></div><div class="style__price___196ew">₹284</div></div></div></a><div class="style__button-container___1N8KX"><span class="style__wrapper-add-to-cart___2KfaI"><div class="style__category-slider___1O5wT style__cart-button___3CZnL"><div class="style__interaction___3cb12">ADD</div></div></span></div></div>
+
+# link_element = driver.find_element_by_css_selector('.sku-card-item a')
+# link_url = link_element.get_attribute('href')
